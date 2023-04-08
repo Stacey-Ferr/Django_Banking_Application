@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+
+<div class="parent">
+    <form action="{% url 'similar_transaction' %}" method="POST" class="form-horizontal">
+        {% csrf_token %}
+        <div class="form-transactions-group">
+            <div class="page2">
+            <label for="name" ><b>Finding similar transactions : </b></label><br/><br/><br/>
+            Account Number: <input type="number" min="10000000" name="account_no" id="account_no" required="True" class="form-control"><br/><br/>
+            Date of Transaction: <input type="date" name="date" id="date" required="True" class="form-control"><br/><br/>
+            Transaction Type:
+            <select id="transaction_type" name="transaction_type">
+                <option value="deposit">Deposit</option>
+                <option value="transfer">Transfer</option>
+                <option value="withdrawal">Withdrawal</option>
+            </select><br/><br/>
+            Amount (in USD): <input type="number" name="amount_usd" id="amount_usd" required="True" step="0.01" min="0.01" class="form-control"><br/><br/>
+            <button> <span>Search</span> </button>
+            </div>
+        </div>
+
+    </form>
+
+    <div class="table-container">
+        {% if similar_transactions != null %}
+        <h2 class="cap1">Similar Transactions</h2>
+        <table class="stats-table">
+            <thead>
+            <tr>
+                <th>Account Number</th>
+                <th>Date</th>
+                <th>Amount (in USD)</th>
+                <th>Transaction Type</th>
+            </tr>
+            </thead>
+            {% for similar_transaction in similar_transactions %}
+            <tr>
+            <td class="value-cell">
+                <span>{{ similar_transaction.account_number }}</span>
+            </td>
+            <td class="value-cell">
+                <span>{{ similar_transaction.date }}</span>
+            </td>
+            <td class="value-cell">
+                <span>{{ similar_transaction.amount_usd }}</span>
+            </td>
+            <td class="value-cell">
+                <span>{{ similar_transaction.transaction_type }}</span>
+            </td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+        </table>
+    </div>
+</div>
+
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">Log In</a>
+{% endif %}
+{% endblock %}

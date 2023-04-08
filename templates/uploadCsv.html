@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+
+<form action="{% url 'upload_csv' %}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="name" >File: </label>
+        <input type="file" name="csv" id="csv" required="True" class="form-control">
+        <button> <span></span>Upload </button>
+    </div>
+</form>
+
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">Log In</a>
+{% endif %}
+{% endblock %}

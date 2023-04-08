@@ -1,0 +1,146 @@
+:root {
+    --clr-primary: #81d4fa;
+    --clr-primary-light: #e1f5fe;
+    --clr-primary-dark: #4fc3f7;
+    --clr-gray100: #f9fbff;
+    --clr-gray150: #f4f6fb;
+    --clr-gray200: #eef1f6;
+    --clr-gray300: #e1e5ee;
+    --clr-gray400: #767b91;
+    --clr-gray500: #4f546c;
+    --clr-gray600: #2a324b;
+    --clr-gray700: #161d34;
+    --clr-pending: #fff0c2;
+    --clr-pending-font: #a68b00;
+    --clr-unpaid: #ffcdd2;
+    --clr-unpaid-font: #c62828;
+    --clr-paid: #c8e6c9;
+    --clr-paid-font: #388e3c;
+    --clr-link: #2962ff;
+    --radius: 0.2rem;
+  }
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 1%;
+    background-color: teal;
+    /* margin-right: 1%; */
+  }
+  
+  .eol {
+    margin-right: auto;
+    padding-left: 1%;
+    color: var(--clr-gray100);
+  }
+  
+  .nav_links {
+    list-style: none;
+  }
+  
+  .nav_links li {
+    display: inline-block;
+    padding: 0px 10px;
+    color: var(--clr-gray100);
+  }
+  
+  .nav_links li a {
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+    color: var(--clr-gray100);
+  }
+  
+  .nav_links li a:hover {
+    color: var(--clr-primary-dark);
+  }
+
+  .footer {
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    width: 100%;
+	height: 25px;
+    background-color: black;
+	text-align: center;
+  }
+
+/* label {
+    text-align: right;
+    top:50%;
+    left:50%;
+    clear: both;
+    float:left;
+    margin-right:15px;
+} */
+
+.form-group {
+    text-align: center;
+    
+    width: 400px;
+    margin-top: 125px;
+    margin-left: 450px;
+    
+    /* Optional Styling */
+    padding: 20px;
+    border-style: solid;
+    border-color: #B6C7D6;
+    border-radius: 20px;
+    background-color: #EAF0F6;
+    /* display: grid;
+    justify-content: center; */
+}
+
+.form-transactions-group {
+    text-align: center;
+    
+    width: 50%;
+    margin-top: 100px;
+    
+    /* Optional Styling */
+    padding: 20px;
+    border-style: solid;
+    border-color: #B6C7D6;
+    border-radius: 20px;
+    background-color: #EAF0F6;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.table-container {
+    text-align: center;
+    
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    margin-left: 50px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+h2 {
+    text-align: center;
+}
+
+.cap1 {
+    margin-left: 20px;
+    text-align: left;
+}
+
+.page2 {
+    text-align: left;
+}
+
+th {
+    text-align: center;
+    width: 100px;
+    padding: 10px;
+}
+
+td {
+    text-align: center;
+    width:100px;
+    padding: 10px;
+}
